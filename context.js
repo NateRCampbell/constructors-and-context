@@ -18,11 +18,20 @@
 */
 
 //Code Here
+const user = {
+  username: "narci",
+  email: "anemail@gmail.com",
+  getUsername: function(){
+    return this.username
+  }
+}
 
 ////////// PROBLEM 2 //////////
 
 /*
- Below we have the constructor Animal.  The eat method is using the "this" keyword.  Use the "new" keyword to assign context to "this", and save the instance to a variable named animal1.  You can pass anything you want in for name, species and food.
+Below we have the constructor Animal.  The eat method is using the "this" keyword.  
+Use the "new" keyword to assign context to "this", and save the instance to a variable named animal1.  
+You can pass anything you want in for name, species and food.
 */
 
 function Animal(name, species, food) {
@@ -38,6 +47,14 @@ function Animal(name, species, food) {
 }
 
 //Code Here
+const animal1 = new Animal('Amira', 'Red panda', 'fruit')
+// const animal2 = new Animal('Alm', 'Horse', 'Hay')
+// const animal3 = new Animal('Oak', 'Fox', 'spoiled fish')
+
+// console.log(animal1)
+// console.log(animal2)
+// console.log(animal3.)
+
 
 ////////// PROBLEM 3 //////////
 
@@ -56,7 +73,7 @@ let who = {
 }
 
 //Code Here
-
+const whoSaysHi = sayHi.bind(who)
 ////////// PROBLEM 4 //////////
 
 /*
@@ -68,7 +85,7 @@ function whatIsThis() {
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-//let context1 = ???
+let context1 = window
 
 let product = {
   name: 'snake plant',
@@ -80,7 +97,7 @@ let product = {
 let func = whatIsThis.bind(product)
 
 // uncomment the line below and tell us what the context of "this" is when we invoke func
-//let context2 = ???
+let context2 = product
 
 let vacation = {
   location: 'Hawaii',
@@ -91,7 +108,7 @@ let vacation = {
 }
 
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
-//let context3 = ???
+let context3 = vacation
 
 function Family(numParents, numKids, numPets) {
   this.numParents = numParents
@@ -106,4 +123,4 @@ function Family(numParents, numKids, numPets) {
 let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
-// let context4 = ???
+let context4 = family1
