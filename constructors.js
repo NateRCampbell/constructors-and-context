@@ -70,8 +70,8 @@ function Employee(name, email, hireDate) {
     this.year = year
     this.move = 0
     this.moveCar = function (){
-      this.move += 10
-      return this
+      return this.move += 10
+      
     }
   }
   
@@ -95,7 +95,7 @@ function Employee(name, email, hireDate) {
   // Code here
   Movie.prototype.changeRating= function(newRating){
     (newRating + this.rating) / 2
-    return this
+    return this.rating
   }
   ////////// PROBLEM 5 //////////
   
@@ -136,8 +136,9 @@ function Employee(name, email, hireDate) {
   // Use this id to find and remove the matching object in the savedPosts array.
   
   // Code here
-  User.prototype.removeSavedPost = function(id){
-    id === savedPost? delete this.savedPost: this.savedPost;
+
+  User.prototype.removeSavedPost = function(num){
+    delete savedPosts[num];
   }
   ////////// PROBLEM 7 //////////
   
@@ -148,6 +149,6 @@ function Employee(name, email, hireDate) {
   
   // Code here
   
-  User.prototype.changePostRating = function(id, num){
-    
+  User.prototype.changePostRating = function(id, newRating){
+    savedPosts[id].newRating = newRating;
   }
